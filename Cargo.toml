@@ -1,8 +1,39 @@
 [package]
 name = "rmap"
 version = "0.1.0"
+authors = ["luvly - Emilio Ortiz"]
+description = "A port scanner build in rust"
+repository = "https://github.com/ILoveThatLady/rmap"
+documentation = "#"
+license = "MIT"
+keywords = [
+    "port-scanner",
+    "security",
+    "networks",
+    "sockets",
+    "stealth -scan",
+    "penetration-testing",
+    "TCP/UDP",
+    "IP-adresses",
+]
+exclude = ["target", "Cargo.lock"]
+readme = "README.md"
 edition = "2021"
+categories = ["networking", "port-scanning", "penetration-testing"]
 
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+# Dependencies
 
 [dependencies]
+clap = { version = "4.3.4", features = ["derive"] }
+tokio = { version = "1.28.2", features = ["full"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+rayon = "1.7"
+crossterm = "0.26.1"
+
+
+[dependencies.regex]
+version = "1.8.4"
+default-features = false
+features = ["std"]
